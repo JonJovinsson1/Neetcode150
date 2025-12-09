@@ -102,4 +102,7 @@ then nums[i] = 3
 
 the if condition counts the diff, using count() as a safe method to not insert another value into indicies, and checks that indicies[diff] is not equal to i (so it doesnt use the same value twice, lets say for target = 6, using 3 twice when it is at index 2 for example)
  then returns i & indicies[diff] to return the indexes.
+ 
+ time complexity: O(n)
+ space complexity: O(n)
 */
