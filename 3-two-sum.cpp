@@ -106,3 +106,23 @@ the if condition counts the diff, using count() as a safe method to not insert a
  time complexity: O(n)
  space complexity: O(n)
 */
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> prevMap;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int diff = target - nums[i];
+            if (prevMap.find(diff) != prevMap.end()) {
+                return {prevMap[diff], i};
+            }
+            prevMap.insert({nums[i],i});
+        }
+        return {};
+    }
+};
+/*Similar to the above solution, but is only making a single pass.
+declare an unordered map called prevMap
+for loop iterates for the size of nums, declading diff = target - nums[i]. Inside the for loop, the if statement checks prevMap.find[diff] is not equal to the last value in prevMap and returns the index of prevMap[diff] & i.
+*/
